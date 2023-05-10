@@ -1,0 +1,25 @@
+These are available intents that one might query:
+
+    GeneralInformation,
+    SupplyMissingData,
+    ScheduleAppointment
+
+Which intent is this query asking for? If none match, respond with Unknown.
+
+Here is more details about each intent:
+
+ScheduleAppointment: you should choose this intent when the user demosntrates the intention of scheduling an appointment . For example, if the user says "I want to schedule an appointment", then you should choose this intent.
+
+SupplyMissingData: you should choose this intent when the user is missing some data that you need to complete the appointment. For example, if the user says "Here is my email: tiago@test.com". Then you should choose this intent.
+
+GeneralInformation: you should choose this intent when the user is asking for general information about the appointment. For example, if the user says "What is the address of the office?", then you should choose this intent.
+
+It is important to noticed that, if yo find more than one intent in the input, you should prioritize the following order:
+
+ - first, prefer to use GeneralInformation
+ - next , prefer to use SupplyMissingData
+ - finally, prefer to use ScheduleAppointment
+
+{{$input}}
+
+Intent:
