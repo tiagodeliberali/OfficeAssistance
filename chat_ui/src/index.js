@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
 import App from "./App";
-import chatReducer from "./chatSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import messageSlice from "./messageSlice";
 
+// Create the Redux store with the message slice
 const store = configureStore({
   reducer: {
-    messages: chatReducer,
+    message: messageSlice,
   },
 });
 
+// Render the root component and wrap it with the Redux provider
 ReactDOM.render(
   <Provider store={store}>
     <App />

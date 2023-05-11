@@ -1,48 +1,21 @@
 import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { addMessage } from "./chatSlice";
 
-export const sendMessage = createAsyncThunk(
-  "messages/sendMessage",
-  async (message, thunkAPI) => {
-    try {
-      const response = await axios.post("/api/messages", { message });
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
-    }
+// Create an axios instance with the base URL of the backend
+const api = axios.create({
+  baseURL: "https://localhost:7124/",
+});
+
+// Define a function for sending the payload to the backend and returning the response
+export const sendMessage = async (payload) => {
+  try {
+    // Send a post request with the payload as the data
+    const response = await api.post("/Assistance", { payload });
+    // Return the response data
+    return response.data;
+  } catch (error) {
+    // Handle the error
+    console.error(error);
+    // Return a default error message
+    return { error: "Something went wrong" };
   }
-);
-
-export const fetchMessages = createAsyncThunk(
-  "messages/fetchMessages",
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get("/api/messages");
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
-    }
-  }
-);
-
-export const setupWSConnection = (dispatch) => {
-  const ws = new WebSocket("ws://localhost:3001");
-
-  ws.onopen = () => {
-    console.log("WebSocket connection established");
-  };
-
-  ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    dispatch(addMessage(data.message));
-  };
-
-  ws.onclose = () => {
-    console.log("WebSocket connection closed");
-  };
-
-  ws.onerror = (error) => {
-    console.error("WebSocket error:", error);
-  };
 };
