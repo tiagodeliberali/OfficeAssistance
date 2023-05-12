@@ -8,7 +8,7 @@ const initialState = {
       sender: "bot",
       payload: {
         botResponse:
-          "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?",
+          "Hello! I'm Cecília, virtual assistant of Dr. Nicoly. How can I assist you?",
       },
     },
   ],

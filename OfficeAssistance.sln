@@ -5,9 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAssistance.Core", "OfficeAssistance.Core\OfficeAssistance.Core.csproj", "{78B3F3B6-98C9-437D-B63A-B539051ACD81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAssistance.Console", "OfficeAssistance.Console\OfficeAssistance.Console.csproj", "{2A1E64BD-F794-4B47-8C2C-D83E11853B89}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAssistance.API", "OfficeAssistance.API\OfficeAssistance.API.csproj", "{59984193-67E8-46F5-A583-861B8BDD0B05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAssistance.API", "OfficeAssistance.API\OfficeAssistance.API.csproj", "{59984193-67E8-46F5-A583-861B8BDD0B05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{78B3F3B6-98C9-437D-B63A-B539051ACD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B3F3B6-98C9-437D-B63A-B539051ACD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B3F3B6-98C9-437D-B63A-B539051ACD81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A1E64BD-F794-4B47-8C2C-D83E11853B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A1E64BD-F794-4B47-8C2C-D83E11853B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A1E64BD-F794-4B47-8C2C-D83E11853B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A1E64BD-F794-4B47-8C2C-D83E11853B89}.Release|Any CPU.Build.0 = Release|Any CPU
 		{59984193-67E8-46F5-A583-861B8BDD0B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59984193-67E8-46F5-A583-861B8BDD0B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59984193-67E8-46F5-A583-861B8BDD0B05}.Release|Any CPU.ActiveCfg = Release|Any CPU

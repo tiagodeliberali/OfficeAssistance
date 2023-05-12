@@ -548,7 +548,7 @@ export const sendMessage = async (conversation) => {
 };
 ```
 
-When the app is loaded, I want to show in the chat history the following message "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?"
+When the app is loaded, I want to show in the chat history the following message "Hello! I'm Cecília, virtual assistant of Dr. Nicoly. How can I assist you?"
 
 .
 
@@ -565,7 +565,7 @@ const initialState = {
       sender: "bot",
       payload: {
         botResponse:
-          "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?",
+          "Hello! I'm Cecília, virtual assistant of Dr. Nicoly. How can I assist you?",
       },
     },
   ],

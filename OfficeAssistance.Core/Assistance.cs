@@ -31,7 +31,7 @@ public class Assistance
         // Alternative using OpenAI
         kernel.Config.AddOpenAITextCompletionService(
             "text-davinci-003",                                         // OpenAI Model name
-            "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"       // OpenAI API Key
+            "<key>"                                                     // OpenAI API Key
         );
         // crate a variable with current directory path
         var currentAssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
@@ -116,7 +116,7 @@ public class Assistance
 
         var variables = new ContextVariables(input);
         variables.Set("availableSlots", this.RetrieveSchedule());
-        variables.Set("todayDate", DateTime.Now.ToString("yyyy-MM-dd, dddd"));
+        variables.Set("todayDate", DateTime.Today.ToLongDateString());
 
         var scheduleString = (await kernel.RunAsync(variables, directorySkills["ScheduleAppointment"])).ToString().Trim();
         var scheduleJson = JsonSerializer.Deserialize<ScheduleData>(scheduleString)!;
@@ -133,9 +133,6 @@ public class Assistance
     {
         var availavleDays = new List<DateTime>()
         {
-            DateTime.Parse("2023-05-11 09:00"),
-            DateTime.Parse("2023-05-11 11:00"),
-            DateTime.Parse("2023-05-11 15:00"),
             DateTime.Parse("2023-05-12 10:00"),
             DateTime.Parse("2023-05-12 14:00"),
             DateTime.Parse("2023-05-12 15:00"),
@@ -151,10 +148,13 @@ public class Assistance
             DateTime.Parse("2023-05-17 17:00"),
             DateTime.Parse("2023-05-17 18:00"),
             DateTime.Parse("2023-05-17 20:00"),
-            DateTime.Parse("2023-05-18 10:00")
+            DateTime.Parse("2023-05-18 10:00"),
+            DateTime.Parse("2023-05-19 09:00"),
+            DateTime.Parse("2023-05-19 11:00"),
+            DateTime.Parse("2023-05-19 15:00"),
         };
 
-        return string.Join("\n", availavleDays.Select(x => $"Sessão disponivel iniciando {x.ToString("yyyy-MM-dd, dddd, 'às' HH:mm", new CultureInfo("pt-BR"))}"));
+        return string.Join("\n", availavleDays.Select(x => $"Available session starting {x.ToLongDateString()} at {x.ToLongTimeString()}"));
     }
 }
 
