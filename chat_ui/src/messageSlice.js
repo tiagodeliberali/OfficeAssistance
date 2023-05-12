@@ -2,7 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Define the initial state of the message data
 const initialState = {
-  messages: [],
+  messages: [
+    // Add the initial message from the bot
+    {
+      sender: "bot",
+      payload: {
+        botResponse:
+          "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?",
+      },
+    },
+  ],
 };
 
 // Create a Redux slice for the message data

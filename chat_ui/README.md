@@ -547,3 +547,27 @@ export const sendMessage = async (conversation) => {
   }
 };
 ```
+
+When the app is loaded, I want to show in the chat history the following message "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?"
+
+.
+
+Possible solution:
+
+To achieve this, the initial state of the message data in the messageSlice.js module should be modified to include the initial message from the bot. For example:
+
+```jsx
+// Define the initial state of the message data
+const initialState = {
+  messages: [
+    // Add the initial message from the bot
+    {
+      sender: "bot",
+      payload: {
+        botResponse:
+          "Olá! Eu sou a Cecília, a assistente virtual da dra. Nicoly. Como posso te ajudar?",
+      },
+    },
+  ],
+};
+```
