@@ -32,8 +32,10 @@ function App() {
       setLoading(true);
       // Dispatch the sendPayload action with the value as the payload
       dispatch(sendPayload(value));
-      // Call the sendMessage function with the value as the argument and await the response
-      const response = await sendMessage(value);
+      // Call the sendMessage function with the whole conversation as the argument and await the response
+      const response = await sendMessage(
+        messages.concat({ sender: "user", payload: value })
+      );
       // Dispatch the sendPayload action with the response as the payload
       dispatch(sendPayload(response));
       // Set the loading status to false
@@ -42,7 +44,6 @@ function App() {
       setValue("");
     }
   };
-
   // Define an effect to scroll to the bottom of the chat history when the messages change
   useEffect(() => {
     const history = document.getElementById("chat-history");
