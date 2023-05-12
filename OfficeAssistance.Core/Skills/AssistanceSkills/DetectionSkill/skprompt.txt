@@ -1,25 +1,18 @@
-These are available intents that one might query:
+ScheduleAppointment: you should choose this intent when the only thing the user is requesting is related to scheduling an appointment. If the user have other questions about cost, cancellation policy, address or other things not related to scheduling, do not choose it.
 
-    GeneralInformation,
-    SupplyMissingData,
-    ScheduleAppointment
+For example:
+ - if the user says "I want to schedule an appointment", then you should choose this intent. 
+ - if the user says "I want to schedule an appointment. Is it expensive?", then you do not choose this intent
+ - if the user user ask indirectly to schedule an appointment, like: "Which days are available?", " Does she have any available time next week?", "Does she have any available time next week?", "Does she have any available time next week?", etc., you can choose this intent
 
-Which intent is this query asking for? If none match, respond with Unknown.
-
-Here is more details about each intent:
-
-ScheduleAppointment: you should choose this intent when the user demosntrates the intention of scheduling an appointment . For example, if the user says "I want to schedule an appointment", then you should choose this intent.
-
-SupplyMissingData: you should choose this intent when the user is missing some data that you need to complete the appointment. For example, if the user says "Here is my email: tiago@test.com". Then you should choose this intent.
+SupplyMissingData: you should choose this intent when the user is still suppling data that you requested previously to schedule an appointment. For example, if the user says "Here is my email: tiago@test.com". Then you should choose this intent.
 
 GeneralInformation: you should choose this intent when the user is asking for general information about the appointment. For example, if the user says "What is the address of the office?", then you should choose this intent.
 
-It is important to noticed that, if yo find more than one intent in the input, you should prioritize the following order:
+Which intent is this query asking for? If none match, respond with Unknown.
 
- - first, prefer to use GeneralInformation
- - next , prefer to use SupplyMissingData
- - finally, prefer to use ScheduleAppointment
-
+====
 {{$input}}
+====
 
 Intent:

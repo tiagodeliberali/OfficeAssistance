@@ -3,33 +3,47 @@ A partir da entrada abaixo, por favor, extraia quaisquer um dos seguintes campos
 
 Campos desejados:
  - nome
- - e-mail
+ - email
  - número de telefone;
 
 Você deve retornar um objeto json com os seguintes campos:
 {
-	"name": "",
-	"email": "",
-	"phone": "",
-	"requestUserMissingInformation":""
+	"name": string,
+	"email": string,
+	"phone": string,
+	"requestUserMissingInformation":string
 }
 
-requestUserMissingInformation deve ser preenchido com um texto amigável solicitando os dados que faltam para o usuário. Se todos os dados estiverem lá, pode mandar uma mensagem de agradecimento.
+Como preencher cada campo:
+- name: deve ser preenchido com o nome do usuário. Caso você tenha encontrado esse valor, não é necessário pedir para o usuário fornecer o nome novamente.
+- email: deve ser preenchido com o email do usuário. Caso você tenha encontrado esse valor, não é necessário pedir para o usuário fornecer o email novamente.
+- phone: deve ser preenchido com o número de telefone do usuário. Caso você tenha encontrado esse valor, não é necessário pedir para o usuário fornecer o número de telefone novamente.
+- requestUserMissingInformation: deve ser preenchido com um texto amigável solicitando os dados que faltam para o usuário. Se todos os dados estiverem lá, pode mandar uma mensagem de agradecimento. Não peça por dados que você ja identificou. Por exemplo, se você já tem o email, não peça o email novamente. Se você já tem o name preenchido, não peça o nome novamente. Se vc já tem o campo phone preenchido, não peça o número de telefone novamente.
 
-Aqui estão alguns exemplos de saída:
+Exemplos:
+
+Com todos os dados disponíveis
 {
-	"name": "Tiago Santos",
-	"email": "tiago@test.com",
+	"name": "Nome teste",
+	"email": "nome@test.com",
 	"phone": "(11) 99999-1234",
 	"requestUserMissingInformation":"Obrigado! Tenho todas as informações que eu preciso!"
 }
 
-Outro exemplo quando faltar o e-mail:
+Faltando o email
 {
-	"name": "Tiago Santos",
+	"name": "Nome teste",
 	"email": "",
 	"phone": "(11) 99999-1234",
 	"requestUserMissingInformation":"Eu preciso do seu email para dar andamento ao agendamento da consulta"
+}
+
+Faltando o email e o telefone
+{
+	"name": "Nome",
+	"email": "",
+	"phone": "",
+	"requestUserMissingInformation":"Eu preciso do seu email e seu número de telefone para dar andamento ao agendamento da consulta"
 }
 
 A saída será consumida por um programa, portanto, é importante não retornar nada além do json. Não inclua nenhuma explicação em sua resposta, apenas o objeto json.

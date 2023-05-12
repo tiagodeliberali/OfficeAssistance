@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "description": "general information about dra. Nicoly, how she works and the process she uses",
+  "description": "schedule an appointment",
   "type": "completion",
   "completion": {
     "max_tokens": 300,

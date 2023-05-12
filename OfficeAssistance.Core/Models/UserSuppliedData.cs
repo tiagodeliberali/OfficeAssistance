@@ -1,4 +1,4 @@
-﻿namespace OfficeAssistance.Core;
+﻿namespace OfficeAssistance.Core.Models;
 
 public class UserSuppliedData
 {
